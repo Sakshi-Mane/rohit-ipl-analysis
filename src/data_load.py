@@ -1,7 +1,5 @@
 import json
-import os 
-
-data_path = "../data/raw_matches"
+import os
 
 
 def load_matches(data_path):
@@ -12,9 +10,11 @@ def load_matches(data_path):
             with open(os.path.join(data_path, file)) as f:
                 match = json.load(f)
                 matches.append(match)
+
+    print("Number of matches loaded:", len(matches))
     return matches
 
-    #print("Total matches loaded:", len(matches))
-
-
-    
+# if __name__ == "__main__":
+#     data_path = "../data/raw_matches"
+#     load_matches(data_path)
+   
